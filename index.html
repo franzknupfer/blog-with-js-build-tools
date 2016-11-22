@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/blog-interface.js"></script>
+    <script type="text/javascript" src="js/blog.js"></script>
+    <title>Yo Blog</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Blog</h1>
+      <div class="all-entries"></div>
+      <form id="new-blog-entry">
+        <div class="form-group">
+          <label for="entry">Name</label>
+          <input id="entry" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="content">Add your entry here</label>
+          <textarea id="content" rows="5" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn-success"">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
