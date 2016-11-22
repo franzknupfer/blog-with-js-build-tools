@@ -6,8 +6,34 @@ var source = require('vinyl-source-stream');
 var uglify = require('gulp-uglify');
 var del = require('del');
 var jshint = require('gulp-jshint');
+var lib = require('bower-files')({
+  "overrides":{
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+});
 
 var buildProduction = utilities.env.production;
+
+gulp.task('bowerJS', function () {
+  return gulp.src(lib.ext('js').files)
+    .pipe(concat('vendor.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./build/js'));
+});
+
+gulp.task('bowerCSS', function() {
+  return gulp.src(lib.ext('css').files)
+  .pipe(concat('vendor.css'))
+  .pipe(gulp.dest('./build/css'));
+});
+
+gulp.task('bower', ['bowerJS', 'bowerCSS']);
 
 gulp.task('concatInterface', function() {
   //Pass an array of files to be concatenated for the browser. * is globbing pattern so that all files ending in -interface.js are passed into the array.
@@ -42,6 +68,7 @@ gulp.task("build", ["clean"], function() {
   } else {
     gulp.start('jsBrowserify');
   }
+  gulp.start('bower');
 });
 
 gulp.task('jshint', function() {

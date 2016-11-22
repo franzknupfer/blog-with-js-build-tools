@@ -9,6 +9,7 @@
   "author": "\"Franz Knupfer\"",
   "license": "ISC",
   "devDependencies": {
+    "bower-files": "^3.14.1",
     "browserify": "^13.1.1",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
