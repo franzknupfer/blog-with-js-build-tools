@@ -3,26 +3,42 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="css/blog.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <title>Yo Blog</title>
   </head>
   <body>
     <div class="container">
-      <h1>Blog</h1>
-      <h3>Current time: <div id="time"></div></h3>
-      <div class="all-entries"></div>
-      <form id="new-blog-entry">
-        <div class="form-group">
-          <label for="entry">Name</label>
-          <input id="entry" type="text" class="form-control">
+      <div class="signup">
+        <div id="start-blog">
+          <div class="form-group">
+            <label for="name">Name your blog</label>
+            <input id="name" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="author">What's your name?</label>
+            <input id="author" class="form-control">
+          </div>
+          <button id="signup-blog" class="btn-success"">Submit</button>
         </div>
-        <div class="form-group">
-          <label for="content">Add your entry here</label>
-          <textarea id="content" rows="5" class="form-control"></textarea>
-        </div>
-        <button type="submit" class="btn-success"">Submit</button>
-      </form>
+      </div>
+      <div class="blog">
+        <h1 id="blog-name"></h1>
+        <h3 id="blog-author"></h3>
+        <div class="all-entries"></div>
+        <form id="new-blog-entry">
+          <div class="form-group">
+            <label for="entry">Name</label>
+            <input id="entry" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="content">Add your entry here</label>
+            <textarea id="content" rows="5" class="form-control"></textarea>
+          </div>
+          <button type="submit" class="btn-success"">Submit</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>

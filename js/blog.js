@@ -1,11 +1,18 @@
-function Blog(name) {
+function Blog(name, author) {
   this.name = name;
+  this.author = author;
+  this.totalEntries = 0;
 }
 
-function Entry(entryName, entryContent) {
+function Entry(entryName, entryContent, timeWritten) {
   this.entryName = entryName;
   this.entryContent = entryContent;
+  this.timeWritten = timeWritten;
 }
+
+Blog.prototype.tallyEntries = function() {
+  this.totalEntries +=1;
+};
 
 Entry.prototype.countWords = function() {
   return this.entryContent.split(" ").length + " words";
@@ -23,3 +30,4 @@ Entry.prototype.getTeaser = function() {
 };
 
 exports.entryModule = Entry;
+exports.blogModule = Blog;
